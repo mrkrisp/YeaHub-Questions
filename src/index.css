@@ -1,0 +1,26 @@
+:root {
+  --text: #474747;
+  --text-header: #191919;
+  --color-default-bg: #F4F4F4;
+  --color-bg: #FFFFFF;
+  --color-border: #BABABA;
+  --accent: #6A0BFF;
+  --shadow: 0 4px 10px 0px rgba(106, 99, 118, 0.1);
+
+  --font-family: 'Manrope', sans-serif;
+  --font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+
+  background-color: var(--color-default-bg);
+  color: var(--text);
+
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-header);
+}
