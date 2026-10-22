@@ -1,3 +1,63 @@
 .header {
+	padding-block: 8px;
 	margin-bottom: 41px;
+	background-color: #fff;
+
+	.header__inner {
+		display: flex;
+		align-items: center;
+	}
+	
+	.header__logo {
+		margin-right: 20px;
+		height: 33px;
+		cursor: pointer;
+	}
+
+	.header__nav {
+		margin-right: auto;
+
+		.header__nav-list {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.header__nav-link {
+			text-decoration: none;
+			line-height: 140%;
+		
+			color: #191919;
+			font-size: var(--font-size);
+			font-weight: 500;
+			cursor: pointer;
+		}
+	}
+	
+	
+	.header__btns {
+		display: flex;
+		gap: 26px;
+	
+		.header__btn-login {
+			padding: 0;
+			background-color: transparent;
+			color: var(--accent);
+			border: none;
+		}
+		
+		.header__btn-register {
+			font-size: 1.1rem;
+			padding: 11px 28px;
+			background-color: var(--accent);
+			color: #fff;
+			border: none;
+			border-radius: 12px;
+		}
+	}
+
+
 }
+
+
+

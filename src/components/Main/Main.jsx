@@ -25,20 +25,23 @@ export function Main() {
 
 
 	return <main className={styles.main}>
-		{isLoading ? 
-			<h2>Загрузка вопросов...</h2> 
-			: 
-			(
-				<ul>
-					{questions.map(question => (
-						<li key={question.id}>
-							<h2>{question.title}</h2>
-							<div dangerouslySetInnerHTML={{__html: question.shortAnswer}} />
-						</li>
-					))}
-				</ul>
-			)
-		}
-		
+		<div className='container main__inner'>
+			{isLoading ? 
+				<h2>Загрузка вопросов...</h2> 
+				: 
+				(
+					<ul>
+						{questions.map(question => (
+							<li key={question.id}>
+								<details>
+									<summary>{question.title}</summary>
+									<div dangerouslySetInnerHTML={{__html: question.shortAnswer}} />
+								</details>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
 	</main>
 }
