@@ -1,47 +1,16 @@
-import { useEffect, useState } from 'react'
+import { Questions } from '../Questions/Questions'
 import styles from './Main.module.css'
 
+
 export function Main() {
-	const [questions, setQuestions] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
-
-	useEffect(() => {
-		fetch("https://api.yeatwork.ru/questions/public-questions?page=1&limit=10&order=ASC")
-			.then(res => {
-				setIsLoading(true)
-				if(!res.ok) {
-					throw new Error("Error: ", res.status, res.statusText)
-				}
-				return res.json()
-			})
-			.then(data => {
-				setQuestions(data.data)
-			})
-			.catch(err => {
-				console.log(err.message)
-			})
-			.finally(() => setIsLoading(false))
-	}, [])
-
+	
+	
 
 	return <main className={styles.main}>
 		<div className='container main__inner'>
-			{isLoading ? 
-				<h2>Загрузка вопросов...</h2> 
-				: 
-				(
-					<ul>
-						{questions.map(question => (
-							<li key={question.id}>
-								<details>
-									<summary>{question.title}</summary>
-									<div dangerouslySetInnerHTML={{__html: question.shortAnswer}} />
-								</details>
-							</li>
-						))}
-					</ul>
-				)
-			}
+			<section className={styles["questions"]}>
+				<Questions />
+			</section>
 		</div>
 	</main>
 }

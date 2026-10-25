@@ -1,0 +1,22 @@
+.pagination-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.pagination-item {
+	font-size: 0.875rem;
+	font-weight: 500;
+
+	cursor: pointer;
+
+	&.active {
+		font-weight: semibold;
+		color: #fff;
+		background-color: var(--accent);
+		border-radius: 2px;
+		padding: 2px 6px;
+		
+	}
+}

@@ -1,0 +1,30 @@
+.questions__list {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	margin-bottom: 40px;
+
+	@media(max-width: 768px) {
+		gap: 20px;
+	}
+}
+
+.question__list-heading {
+	font-size: 1.5rem;
+	font-weight: 500;
+
+	padding-bottom: 17px;
+	border-bottom: 0.5px solid rgba(232, 232, 232, 1);
+
+	margin-bottom: 24px;
+
+	@media(max-width: 768px) {
+		margin-bottom: 20px;
+	}
+
+	@media(max-width: 360px) {
+		font-size: 1.25rem;
+		padding-bottom: 8px;
+		margin-bottom: 24px;
+	}
+}

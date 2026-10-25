@@ -16,7 +16,7 @@ export function Footer() {
 
 			<div className={styles["footer__info"]}>
 				<div className={styles["footer__copyright"]}>
-					<p>© 2024 YeaHub</p>
+					<p>©&nbsp;2024&nbsp;YeaHub</p>
 					<a href="#" className={styles['footer__document-link']}>Документы</a>
 				</div>
 
