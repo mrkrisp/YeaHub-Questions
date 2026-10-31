@@ -1,48 +1,54 @@
+import { getQuestions } from '@/api/apiQuestions'
 import { useEffect, useState } from 'react'
 import { Pagination } from '../Pagination/Pagination'
+import styles from './Questions.module.css'
 import { QuestionsList } from './QuestionsList/QuestionsList'
 
-export function Questions() {
-	const [questions, setQuestions] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
-	const [error, setError] = useState("")
+export function Questions({ selectedSkills }) {
+  const [questions, setQuestions] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState('')
 
-	const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
 
-	useEffect(() => {
-		async function fetchData() {
-			setIsLoading(true)
-			setError("")
-			try {
-				const res = await fetch(`https://api.yeatwork.ru/questions/public-questions?page=${page}&limit=10&order=ASC`)
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true)
+      setError('')
+      try {
+        // const params = {
+        //   page,
+        //   selectedSkills: selectedSkills.join(','),
+        // }
+        const questionsData = await getQuestions({
+          page,
+          skills: selectedSkills.join(','),
+        })
 
-				if(!res.ok) {
-					throw new Error(`Error: ${res.status}`)
-				}
+        setQuestions(questionsData.data)
+        setTotalPages(questionsData.total)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setIsLoading(false)
+      }
+    }
 
-				const questionsData = await res.json()
+    fetchData()
+  }, [page, selectedSkills])
 
-				setQuestions(questionsData)
-			} catch (err) {
-				setError(err.message)
-			} finally {
-				setIsLoading(false)
-			}
-		}
-
-		fetchData()
-	}, [page])
-
-	if(isLoading) {
-		return <div>Loading...</div>
-	}
-
-	if(error) {
-		return <h2 style={{color: "red"}}>Error...</h2>
-	}
-
-	return <>
-		<QuestionsList questions={questions.data} />
-		<Pagination currentPage={page} total={questions.total} onClickPage={setPage} />
-	</>
+  return (
+    <section className={styles['questions']}>
+      <h2 className={styles['questions__title']}>Вопросы React, JavaScript</h2>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <h2 style={{ color: 'red' }}>Error...</h2>
+      ) : (
+        <QuestionsList questions={questions} />
+      )}
+      <Pagination currentPage={page} total={totalPages} onClickPage={setPage} />
+    </section>
+  )
 }

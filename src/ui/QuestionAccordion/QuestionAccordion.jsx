@@ -1,4 +1,4 @@
-import AccordionArrowIcon from '@assets/icons/AccordionArrowIcon.svg'
+import AccordionArrowIcon from '@assets/icons/arrows/AccordionArrowIcon.svg'
 import styles from './QuestionAccordion.module.css'
 
 export function QuestionAccordion({title, isOpen, onClickAccordion, children}) {

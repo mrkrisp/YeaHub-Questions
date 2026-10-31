@@ -20,3 +20,10 @@
 		
 	}
 }
+
+button:disabled {
+	cursor: default;
+	img {
+		opacity: 50%;
+	}
+}
