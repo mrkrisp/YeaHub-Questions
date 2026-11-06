@@ -5,9 +5,10 @@
   box-shadow: var(--shadow);
 }
 
-.questions__title {
-  font-size: 1.5rem;
-  font-weight: 500;
+.questions__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   padding-bottom: 17px;
   border-bottom: 0.5px solid rgba(232, 232, 232, 1);
@@ -19,8 +20,37 @@
   }
 
   @media (max-width: 360px) {
-    font-size: 1.25rem;
     padding-bottom: 8px;
     margin-bottom: 24px;
+  }
+}
+
+.questions__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @media (max-width: 360px) {
+    font-size: 1.25rem;
+  }
+}
+
+.questions__header-button {
+  border: var(--border);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.questions__filter {
+  @media (max-width: 1275px) {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    max-width: 328px;
+
+    &.open {
+      display: block;
+    }
   }
 }

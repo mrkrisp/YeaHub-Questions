@@ -44,13 +44,13 @@ button {
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding-inline: 112px;
+  padding-inline: 7%;
 
   @media (max-width: 768px) {
-    padding-inline: 30px;
+    padding-inline: 3%;
   }
 
   @media (max-width: 360px) {
-    padding-inline: 10px;
+    padding-inline: 2%;
   }
 }

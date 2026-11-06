@@ -1,0 +1,27 @@
+.filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 200px;
+  overflow: hidden;
+
+  &.expanded {
+    max-height: none;
+  }
+}
+
+.filter__group-title {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.expanded-btn {
+  font-size: 0.875rem;
+  font-weight: 400;
+
+  color: #5509cc;
+  text-decoration: underline;
+
+  margin-top: 8px;
+}

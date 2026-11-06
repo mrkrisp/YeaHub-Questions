@@ -1,11 +1,9 @@
+.filter__button,
 .filter__button-with-icon {
   display: flex;
   align-items: center;
-  gap: 6px;
-
   border: var(--border);
   border-radius: 12px;
-  padding: 6px 12px;
   font-weight: 500;
 
   &:hover {
@@ -14,11 +12,20 @@
   }
 }
 
-.active {
-  border-color: var(--accent);
+.filter__button {
+  padding: 10px 12px;
+}
+
+.filter__button-with-icon {
+  gap: 6px;
+  padding: 6px 12px;
 }
 
 .filter__button-icon {
   width: 30px;
   height: 30px;
+}
+
+.active {
+  border-color: var(--accent);
 }
