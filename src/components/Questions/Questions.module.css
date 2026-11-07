@@ -25,7 +25,7 @@
   }
 }
 
-.questions__title {
+.questions__header-title {
   font-size: 1.5rem;
   font-weight: 500;
 
@@ -35,22 +35,54 @@
 }
 
 .questions__header-button {
+  display: none;
   border: var(--border);
   border-radius: 8px;
   padding: 6px;
+  max-width: 36px;
+  max-height: 36px;
+
+  @media (max-width: 1275px) {
+    display: block;
+    transition: all 0.2s;
+
+    @media (pointer: fine) {
+      &:hover {
+        border-color: #212121;
+      }
+    }
+
+    &:active {
+      background-color: #f8f8f8;
+    }
+  }
+
+  @media (max-width: 360px) {
+    max-width: 30px;
+    max-height: 30px;
+    padding: 5px;
+  }
 }
 
 .questions__filter {
   @media (max-width: 1275px) {
-    display: none;
-    position: absolute;
+    visibility: hidden;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 100;
     max-width: 328px;
+    max-height: 100vh;
+    overflow: auto;
+    overscroll-behavior: contain;
 
     &.open {
-      display: block;
+      visibility: visible;
     }
+  }
+
+  @media (max-width: 360px) {
+    max-width: none;
+    width: 100%;
   }
 }

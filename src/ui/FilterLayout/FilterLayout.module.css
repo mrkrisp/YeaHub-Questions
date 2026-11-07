@@ -1,9 +1,32 @@
 .filter {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 8px;
 
-  padding: 24px;
+  padding: 1.5rem;
   border-radius: 24px;
   background-color: var(--color-bg);
+
+  @media (max-width: 1275px) {
+    padding: 1rem;
+    border-radius: 0;
+
+    box-shadow: var(--shadow);
+  }
+}
+
+.filter__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filter__close-btn {
+  display: none;
+  align-self: flex-end;
+  cursor: pointer;
+
+  @media (max-width: 1275px) {
+    display: inline-block;
+  }
 }

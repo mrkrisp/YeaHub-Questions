@@ -6,9 +6,11 @@
   border-radius: 12px;
   font-weight: 500;
 
-  &:hover {
-    background-color: var(--accent);
-    color: var(--text-white);
+  @media (pointer: fine) {
+    &:hover {
+      background-color: var(--accent);
+      color: var(--text-white);
+    }
   }
 }
 

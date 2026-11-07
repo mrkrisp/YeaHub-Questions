@@ -1,114 +1,24 @@
 .header {
-	padding-block: 8px;
-	margin-bottom: 41px;
-	background-color: #fff;
+  padding-block: 8px;
+  margin-bottom: 41px;
+  background-color: #fff;
+}
 
-	.header__inner {
-		display: flex;
-		align-items: center;
-	}
-	
-	.header__logo {
-		margin-right: 20px;
-		height: 33px;
-		cursor: pointer;
+.header__inner {
+  display: flex;
+  align-items: center;
+}
 
-		@media(max-width: 768px) {
-			margin-right: 0;
-		}
-	}
+.header__logo {
+  margin-right: 20px;
+  height: 33px;
+  cursor: pointer;
 
-	.header__nav {
-		margin-right: auto;
+  @media (max-width: 1040px) {
+    margin-right: 0;
+  }
 
-		.header__nav-accordion {
-			position: relative;
-
-			.header__nav-button {
-				display: none;
-
-				@media(max-width: 768px) {
-					display: inline-block;
-				}
-			}
-			
-			.header__nav-list {
-				display: flex;
-				align-items: center;
-				gap: 20px;
-				overflow: hidden;
-	
-				.header__nav-link {
-					text-decoration: none;
-					line-height: 140%;
-				
-					color: #191919;
-					font-size: var(--font-size);
-					font-weight: 500;
-					cursor: pointer;
-	
-					transition: color 0.3s ease;
-	
-					&:hover {
-						color: var(--accent);
-					}
-				}
-	
-				@media(max-width: 768px) {
-					position: absolute;
-					top: 45px;
-					left: 0;
-					z-index: 100;
-	
-					flex-direction: column;
-					gap: 10px;
-					padding: 10px;
-					border-radius: 10px;
-					background-color: #fff;
-
-					max-height: 0px;
-					width: 150px;
-					opacity: 0;
-					transition: max-height 0.3s ease, opacity 0.3s ease;
-
-					&.open {
-						max-height: 200px;
-						opacity: 1;
-					}
-				}
-			}
-		}
-
-		
-	}
-	
-	
-	.header__btns {
-		display: flex;
-		gap: 26px;
-
-		.header__btn-login {
-			padding: 0;
-			background-color: transparent;
-			color: var(--accent);
-			border: none;
-		}
-		
-		.header__btn-register {
-			font-size: 1.1rem;
-			padding: 11px 28px;
-			background-color: var(--accent);
-			color: #fff;
-			border: none;
-			border-radius: 12px;
-
-			transition: transform 0.3s ease;
-			&:hover {
-				transform: scale(1.02);
-			}
-			&:active {
-				transform: scale(0.95);
-			}
-		}
-	}
+  @media (max-width: 600px) {
+    margin-right: 20px;
+  }
 }

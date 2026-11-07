@@ -1,4 +1,5 @@
 import { getQuestions } from '@/api/apiQuestions'
+import FilterOpenButtonIcon from '@assets/icons/FilterOpenButtonIcon.svg'
 import { useEffect, useState } from 'react'
 import { FilterQuestions } from '../FilterQuestions/FilterQuestions'
 import styles from './Questions.module.css'
@@ -20,14 +21,17 @@ export function Questions() {
 
   const [filterIsOpen, setFilterIsOpen] = useState(false)
 
-  const onClickFilterButton = () => {
+  const onClickFilterOpen = () => {
     setFilterIsOpen((prev) => !prev)
-    if (!filterIsOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'initial'
-    }
   }
+
+  useEffect(() => {
+    if (filterIsOpen) {
+      document.body.classList.add('no-scroll')
+    } else {
+      document.body.classList.remove('no-scroll')
+    }
+  }, [filterIsOpen])
 
   useEffect(() => {
     async function fetchData() {
@@ -55,16 +59,22 @@ export function Questions() {
 
   return (
     <>
-      <section className={styles['questions']}>
+      <section className={`${styles['questions']}`}>
         <div className={styles['questions__header']}>
-          <h2 className={styles['questions__title']}>
+          <h2 className={styles['questions__header-title']}>
             Вопросы React, JavaScript
           </h2>
           <button
             className={styles['questions__header-button']}
-            onClick={onClickFilterButton}
+            onClick={onClickFilterOpen}
           >
-            Open
+            <img
+              src={FilterOpenButtonIcon}
+              width={24}
+              height={24}
+              loading="lazy"
+              alt="Open"
+            />
           </button>
         </div>
         {error ? (
@@ -78,6 +88,7 @@ export function Questions() {
           />
         )}
       </section>
+
       <aside
         className={`${styles['questions__filter']} ${
           filterIsOpen ? styles.open : ''
@@ -88,6 +99,7 @@ export function Questions() {
           setFilters={setFilters}
           onSearch={setSearchQuery}
           setPage={setPage}
+          setFilterIsOpen={setFilterIsOpen}
         />
       </aside>
     </>

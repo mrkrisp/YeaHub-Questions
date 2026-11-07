@@ -1,3 +1,4 @@
+import { ExpandedButton } from '@/ui/ExpandedButton/ExpandedButton'
 import FigmaIcon from '@assets/icons/FigmaIcon.svg'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { FilterItem } from '../FilterItem/FilterItem'
@@ -61,13 +62,7 @@ export function FilterGroup({
       </ul>
 
       {hasOverflow && (
-        <button
-          className={styles['expanded-btn']}
-          type="button"
-          onClick={() => setExpanded((prev) => !prev)}
-        >
-          {expanded ? 'Скрыть' : 'Посмотреть все'}
-        </button>
+        <ExpandedButton expanded={expanded} setExpanded={setExpanded} />
       )}
     </div>
   )

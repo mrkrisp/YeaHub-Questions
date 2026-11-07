@@ -1,0 +1,82 @@
+.burger__menu {
+  position: relative;
+}
+
+.burger__menu-btn {
+  display: none;
+
+  @media (max-width: 600px) {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.5px;
+
+    span {
+      width: 23px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #5e5e5e;
+    }
+  }
+}
+
+.header__btns {
+  display: flex;
+  gap: 26px;
+
+  @media (max-width: 600px) {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 100;
+
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow);
+
+    transition: all 0.2s;
+
+    &.burger-open {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+}
+
+.header__btn-login {
+  padding: 0;
+  background-color: transparent;
+  color: var(--accent);
+  border: none;
+}
+
+.header__btn-register {
+  font-size: 1.1rem;
+  padding: 11px 28px;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+
+  transition: transform 0.3s ease;
+  @media (pointer: fine) {
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}

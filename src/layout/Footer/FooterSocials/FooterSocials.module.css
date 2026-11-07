@@ -1,0 +1,15 @@
+.footer__social-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__social-img {
+  width: 28px;
+  height: 28px;
+
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}

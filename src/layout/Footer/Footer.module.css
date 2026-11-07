@@ -1,68 +1,70 @@
 .footer {
-	margin-top: auto;
-	padding-block: 30px 12px;
-	background-color: #18003E;
-	border-radius: 16px 16px 0 0;
-	color: #8C8C8C;
-	
-	.footer__logo {
-		font-size: 1.5rem;
-		font-weight: bolder;
-		color: #fff;
-		margin-bottom: 30px;
-	}
-
-	.footer__slogan {
-		color: #fff;
-		margin-bottom: 16px;
-	}
-
-	.footer__description {
-		font-size: 0.75rem;
-		border-bottom: 1px solid rgba(230, 230, 230, 0.1);
-		padding-bottom: 35px;
-		margin-bottom: 19px;
-	}
-
-	.footer__info {
-		display: flex;
-		justify-content: space-between;
-		font-size: 0.875rem;
-
-		.footer__copyright {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			
-			.footer__document-link {
-				font-size: 0.875rem;
-				text-decoration: none;
-				color: #8C8C8C;
-			}
-		}
-
-		.footer__social-info {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-
-			.footer__social-list {
-				display: flex;
-				align-items: center;
-				gap: 8px;
-
-				.footer__social-img {
-					width: 28px;
-					height: auto;
-
-					@media(max-width: 768px) {
-						width: 20px;
-					}
-				}
-			}
-		}
-	}
+  margin-top: auto;
+  padding-block: 30px 12px;
+  background-color: #18003e;
+  border-radius: 16px 16px 0 0;
+  color: #8c8c8c;
 }
 
+.footer__logo {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #fff;
+  margin-bottom: 30px;
+}
 
+.footer__slogan {
+  color: #fff;
+  margin-bottom: 16px;
 
+  @media (max-width: 680px) {
+    font-size: 0.875rem;
+  }
+}
+
+.footer__description {
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.1);
+  padding-bottom: 35px;
+  margin-bottom: 19px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 680px) {
+    padding-bottom: 16px;
+  }
+}
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 0.875rem;
+
+  @media (max-width: 680px) {
+    flex-wrap: wrap;
+  }
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-right: auto;
+
+  .footer__document-link {
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: #8c8c8c;
+  }
+}
+
+.footer__social-text {
+  @media (max-width: 680px) {
+    order: 1;
+  }
+}

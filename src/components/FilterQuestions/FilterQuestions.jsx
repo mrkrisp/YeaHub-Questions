@@ -20,7 +20,13 @@ const complexities = [
   { title: '9-10', value: '9,10' },
 ]
 
-export function FilterQuestions({ filters, setFilters, onSearch, setPage }) {
+export function FilterQuestions({
+  filters,
+  setFilters,
+  onSearch,
+  setPage,
+  setFilterIsOpen,
+}) {
   const [specializations, setSpecializations] = useState([])
   const [skills, setSkills] = useState([])
 
@@ -93,7 +99,7 @@ export function FilterQuestions({ filters, setFilters, onSearch, setPage }) {
   }
 
   return (
-    <FilterLayout>
+    <FilterLayout setFilterIsOpen={setFilterIsOpen}>
       <FilterSearch onSearch={onSearch} />
 
       {filtersData.map((filterData) => (

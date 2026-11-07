@@ -14,6 +14,7 @@ export function FilterItem({ onClickItem, text, isActive, icon }) {
             className={styles['filter__button-icon']}
             src={icon}
             alt="icon"
+            loading="lazy"
           />
         ) : null}
         <span>{text}</span>
