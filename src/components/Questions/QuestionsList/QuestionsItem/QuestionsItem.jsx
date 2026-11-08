@@ -31,7 +31,10 @@ export function QuestionsItem({ title, shortAnswer, complexity, rating }) {
             alt="more"
           />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: shortAnswer }} />
+        <div
+          className={styles['question__short-answer']}
+          dangerouslySetInnerHTML={{ __html: shortAnswer }}
+        />
         <div className={styles['question__details-link-wrapper']}>
           <a href="#" className={styles['question__details-link']}>
             <span>Подробнее</span>

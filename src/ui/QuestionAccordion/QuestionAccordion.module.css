@@ -1,48 +1,55 @@
 .accordion__button {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
 
-	border: none;
-	background-color: transparent;
-	width: 100%;
-	text-align: left;
-	
-	cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
 
-	.accordion__title {
-		font-size: 1.25rem;
-		font-weight: 500;
+  cursor: pointer;
 
-		@media(max-width: 360px) {
-			font-size: 1rem;
-			line-height: 130%;
-		}
-	}
+  .accordion__title {
+    font-size: 1.25rem;
+    font-weight: 500;
 
-	.accordion__arrow {
-		width: 14px;
-		height: 8px;
-		transition: transform 0.3s ease-in-out;
+    @media (max-width: 360px) {
+      font-size: 1rem;
+      line-height: 130%;
+    }
+  }
 
-		&.open {
-			transform: rotate(-180deg);
-		}
-	}
+  .accordion__arrow {
+    width: 14px;
+    height: 8px;
+    transition: transform 0.3s ease-in-out;
+
+    &.open {
+      transform: rotate(-180deg);
+    }
+  }
 }
 
 .accordion__panel {
-	display: grid;
-	grid-template-rows: 0fr;
-	transition: grid-template-rows 0.3s ease, padding 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease, padding 0.3s ease;
 
-	.accordion__panel-content {
-		overflow: hidden;
-	}
+  .accordion__panel-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
-	&.open {
-		padding-top: 24px;
-		grid-template-rows: 1fr;
-	}	
+    @media (max-width: 400px) {
+      gap: 16px;
+    }
+  }
+
+  &.open {
+    padding-top: 24px;
+    grid-template-rows: 1fr;
+  }
 }

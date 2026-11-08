@@ -1,9 +1,10 @@
 import { getSkills } from '@/api/apiSkills.js'
 import { getSpecializations } from '@/api/apiSpecializations.js'
-import { FilterGroup } from '@/components/FilterGroup/FilterGroup'
-import { FilterLayout } from '@/ui/FilterLayout/FilterLayout'
+
 import { useEffect, useMemo, useState } from 'react'
-import { FilterSearch } from '../FilterSearch/FilterSearch'
+import { FilterGroup } from '../Filter/FilterGroup/FilterGroup'
+import { FilterLayout } from '../Filter/FilterLayout/FilterLayout'
+import { FilterSearch } from '../Filter/FilterSearch/FilterSearch'
 
 const rating = [
   { title: '1', value: 1 },

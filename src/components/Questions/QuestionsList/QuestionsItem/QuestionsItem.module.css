@@ -45,7 +45,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
-  margin-bottom: 24px;
 
   @media (max-width: 500px) {
     gap: 16px;
@@ -88,12 +87,19 @@
   }
 }
 
+.question__short-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .question__details-link-wrapper {
   display: none;
 
   @media (max-width: 400px) {
     display: flex;
     justify-content: flex-end;
+    margin-top: 4px;
   }
 }
 
@@ -105,5 +111,4 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--accent);
-  margin-top: 23px;
 }

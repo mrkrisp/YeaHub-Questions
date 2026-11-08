@@ -3,7 +3,7 @@
 
   .main__inner {
     display: grid;
-    grid-template-columns: minmax(340px, 804px) 1fr;
+    grid-template-columns: minmax(340px, 804px) minmax(296px, 392px);
     align-items: start;
     gap: 20px;
 
